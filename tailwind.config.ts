@@ -1,14 +1,7 @@
-import type { Config } from "tailwindcss"
-
-const config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   darkMode: ["class"],
-  content: [
-    // '.src/pages/**/*.{ts,tsx}',
-    '.src/components/**/*.{ts,tsx}',
-    '.src/app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
-  prefix: "tailwind.config.ts",
+  content: ["./src/components/**/*.{ts,tsx}", "./src/app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   theme: {
     container: {
       center: true,
@@ -18,6 +11,10 @@ const config = {
       },
     },
     extend: {
+      height: {
+        "actions-bar": "var(--global-actions-bar-height, 56px)",
+        "main-container-height": "calc(100% - var(--global-actions-bar-height, 56px))",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -58,23 +55,34 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      zIndex: {
+        "top-bar": "10",
+      },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
+          from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          to: { height: 0 },
+        },
+        "collapsible-w-down": {
+          from: { width: 0 },
+          to: { width: "var(--radix-collapsible-content-width)" },
+        },
+        "collapsible-w-up": {
+          from: { width: "var(--radix-collapsible-content-width)" },
+          to: { width: 0 },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "collapsible-w-down": "collapsible-w-down 0.2s ease-out",
+        "collapsible-w-up": "collapsible-w-up 0.2s ease-out",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
-
-export default config
+};

@@ -1,7 +1,7 @@
-import { GripVertical } from "lucide-react"
-import * as ResizablePrimitive from "react-resizable-panels"
+import { GripVertical } from "lucide-react";
+import * as ResizablePrimitive from "react-resizable-panels";
 
-import { cn } from "@/shared/utils/string"
+import { cn } from "@/shared/utils/string";
 
 const ResizablePanelGroup = ({
   className,
@@ -10,25 +10,25 @@ const ResizablePanelGroup = ({
   <ResizablePrimitive.PanelGroup
     className={cn(
       "tailwind.config.tsflex tailwind.config.tsh-full tailwind.config.tsw-full data-[panel-group-direction=vertical]:tailwind.config.tsflex-col",
-      className
+      className,
     )}
     {...props}
   />
-)
+);
 
-const ResizablePanel = ResizablePrimitive.Panel
+const ResizablePanel = ResizablePrimitive.Panel;
 
 const ResizableHandle = ({
   withHandle,
   className,
   ...props
 }: React.ComponentProps<typeof ResizablePrimitive.PanelResizeHandle> & {
-  withHandle?: boolean
+  withHandle?: boolean;
 }) => (
   <ResizablePrimitive.PanelResizeHandle
     className={cn(
       "tailwind.config.tsrelative tailwind.config.tsflex tailwind.config.tsw-px tailwind.config.tsitems-center tailwind.config.tsjustify-center tailwind.config.tsbg-border after:tailwind.config.tsabsolute after:tailwind.config.tsinset-y-0 after:tailwind.config.tsleft-1/2 after:tailwind.config.tsw-1 after:tailwind.config.ts-translate-x-1/2 focus-visible:tailwind.config.tsoutline-none focus-visible:tailwind.config.tsring-1 focus-visible:tailwind.config.tsring-ring focus-visible:tailwind.config.tsring-offset-1 data-[panel-group-direction=vertical]:tailwind.config.tsh-px data-[panel-group-direction=vertical]:tailwind.config.tsw-full data-[panel-group-direction=vertical]:after:tailwind.config.tsleft-0 data-[panel-group-direction=vertical]:after:tailwind.config.tsh-1 data-[panel-group-direction=vertical]:after:tailwind.config.tsw-full data-[panel-group-direction=vertical]:after:tailwind.config.ts-translate-y-1/2 data-[panel-group-direction=vertical]:after:tailwind.config.tstranslate-x-0 [&[data-panel-group-direction=vertical]>div]:tailwind.config.tsrotate-90",
-      className
+      className,
     )}
     {...props}
   >
@@ -38,6 +38,6 @@ const ResizableHandle = ({
       </div>
     )}
   </ResizablePrimitive.PanelResizeHandle>
-)
+);
 
-export { ResizablePanelGroup, ResizablePanel, ResizableHandle }
+export { ResizablePanelGroup, ResizablePanel, ResizableHandle };

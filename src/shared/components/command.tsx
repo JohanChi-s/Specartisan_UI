@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { type DialogProps } from "@radix-ui/react-dialog"
-import { Command as CommandPrimitive } from "cmdk"
-import { Search } from "lucide-react"
+import * as React from "react";
+import { type DialogProps } from "@radix-ui/react-dialog";
+import { Command as CommandPrimitive } from "cmdk";
+import { Search } from "lucide-react";
 
-import { cn } from "@/shared/utils/string"
-import { Dialog, DialogContent } from "@/shared/components/dialog"
+import { cn } from "@/shared/utils/string";
+import { Dialog, DialogContent } from "@/shared/components/dialog";
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -16,12 +16,12 @@ const Command = React.forwardRef<
     ref={ref}
     className={cn(
       "tailwind.config.tsflex tailwind.config.tsh-full tailwind.config.tsw-full tailwind.config.tsflex-col tailwind.config.tsoverflow-hidden tailwind.config.tsrounded-md tailwind.config.tsbg-popover tailwind.config.tstext-popover-foreground",
-      className
+      className,
     )}
     {...props}
   />
-))
-Command.displayName = CommandPrimitive.displayName
+));
+Command.displayName = CommandPrimitive.displayName;
 
 interface CommandDialogProps extends DialogProps {}
 
@@ -34,27 +34,30 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
         </Command>
       </DialogContent>
     </Dialog>
-  )
-}
+  );
+};
 
 const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  <div className="tailwind.config.tsflex tailwind.config.tsitems-center tailwind.config.tsborder-b tailwind.config.tspx-3" cmdk-input-wrapper="">
+  <div
+    className="tailwind.config.tsflex tailwind.config.tsitems-center tailwind.config.tsborder-b tailwind.config.tspx-3"
+    cmdk-input-wrapper=""
+  >
     <Search className="tailwind.config.tsmr-2 tailwind.config.tsh-4 tailwind.config.tsw-4 tailwind.config.tsshrink-0 tailwind.config.tsopacity-50" />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
         "tailwind.config.tsflex tailwind.config.tsh-11 tailwind.config.tsw-full tailwind.config.tsrounded-md tailwind.config.tsbg-transparent tailwind.config.tspy-3 tailwind.config.tstext-sm tailwind.config.tsoutline-none placeholder:tailwind.config.tstext-muted-foreground disabled:tailwind.config.tscursor-not-allowed disabled:tailwind.config.tsopacity-50",
-        className
+        className,
       )}
       {...props}
     />
   </div>
-))
+));
 
-CommandInput.displayName = CommandPrimitive.Input.displayName
+CommandInput.displayName = CommandPrimitive.Input.displayName;
 
 const CommandList = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.List>,
@@ -62,12 +65,15 @@ const CommandList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.List
     ref={ref}
-    className={cn("tailwind.config.tsmax-h-[300px] tailwind.config.tsoverflow-y-auto tailwind.config.tsoverflow-x-hidden", className)}
+    className={cn(
+      "tailwind.config.tsmax-h-[300px] tailwind.config.tsoverflow-y-auto tailwind.config.tsoverflow-x-hidden",
+      className,
+    )}
     {...props}
   />
-))
+));
 
-CommandList.displayName = CommandPrimitive.List.displayName
+CommandList.displayName = CommandPrimitive.List.displayName;
 
 const CommandEmpty = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Empty>,
@@ -78,9 +84,9 @@ const CommandEmpty = React.forwardRef<
     className="tailwind.config.tspy-6 tailwind.config.tstext-center tailwind.config.tstext-sm"
     {...props}
   />
-))
+));
 
-CommandEmpty.displayName = CommandPrimitive.Empty.displayName
+CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
 const CommandGroup = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Group>,
@@ -90,13 +96,13 @@ const CommandGroup = React.forwardRef<
     ref={ref}
     className={cn(
       "tailwind.config.tsoverflow-hidden tailwind.config.tsp-1 tailwind.config.tstext-foreground [&_[cmdk-group-heading]]:tailwind.config.tspx-2 [&_[cmdk-group-heading]]:tailwind.config.tspy-1.5 [&_[cmdk-group-heading]]:tailwind.config.tstext-xs [&_[cmdk-group-heading]]:tailwind.config.tsfont-medium [&_[cmdk-group-heading]]:tailwind.config.tstext-muted-foreground",
-      className
+      className,
     )}
     {...props}
   />
-))
+));
 
-CommandGroup.displayName = CommandPrimitive.Group.displayName
+CommandGroup.displayName = CommandPrimitive.Group.displayName;
 
 const CommandSeparator = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Separator>,
@@ -104,11 +110,14 @@ const CommandSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={cn("tailwind.config.ts-mx-1 tailwind.config.tsh-px tailwind.config.tsbg-border", className)}
+    className={cn(
+      "tailwind.config.ts-mx-1 tailwind.config.tsh-px tailwind.config.tsbg-border",
+      className,
+    )}
     {...props}
   />
-))
-CommandSeparator.displayName = CommandPrimitive.Separator.displayName
+));
+CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
 const CommandItem = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Item>,
@@ -118,29 +127,26 @@ const CommandItem = React.forwardRef<
     ref={ref}
     className={cn(
       "tailwind.config.tsrelative tailwind.config.tsflex tailwind.config.tscursor-default tailwind.config.tsselect-none tailwind.config.tsitems-center tailwind.config.tsrounded-sm tailwind.config.tspx-2 tailwind.config.tspy-1.5 tailwind.config.tstext-sm tailwind.config.tsoutline-none aria-selected:tailwind.config.tsbg-accent aria-selected:tailwind.config.tstext-accent-foreground data-[disabled]:tailwind.config.tspointer-events-none data-[disabled]:tailwind.config.tsopacity-50",
-      className
+      className,
     )}
     {...props}
   />
-))
+));
 
-CommandItem.displayName = CommandPrimitive.Item.displayName
+CommandItem.displayName = CommandPrimitive.Item.displayName;
 
-const CommandShortcut = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLSpanElement>) => {
+const CommandShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => {
   return (
     <span
       className={cn(
         "tailwind.config.tsml-auto tailwind.config.tstext-xs tailwind.config.tstracking-widest tailwind.config.tstext-muted-foreground",
-        className
+        className,
       )}
       {...props}
     />
-  )
-}
-CommandShortcut.displayName = "CommandShortcut"
+  );
+};
+CommandShortcut.displayName = "CommandShortcut";
 
 export {
   Command,
@@ -152,4 +158,4 @@ export {
   CommandItem,
   CommandShortcut,
   CommandSeparator,
-}
+};

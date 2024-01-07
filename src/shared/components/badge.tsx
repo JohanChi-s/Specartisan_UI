@@ -1,7 +1,7 @@
-import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/shared/utils/string"
+import { cn } from "@/shared/utils/string";
 
 const badgeVariants = cva(
   "tailwind.config.tsinline-flex tailwind.config.tsitems-center tailwind.config.tsrounded-full tailwind.config.tsborder tailwind.config.tspx-2.5 tailwind.config.tspy-0.5 tailwind.config.tstext-xs tailwind.config.tsfont-semibold tailwind.config.tstransition-colors focus:tailwind.config.tsoutline-none focus:tailwind.config.tsring-2 focus:tailwind.config.tsring-ring focus:tailwind.config.tsring-offset-2",
@@ -20,17 +20,15 @@ const badgeVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  }
-)
+  },
+);
 
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof badgeVariants> {}
 
 function Badge({ className, variant, ...props }: BadgeProps) {
-  return (
-    <div className={cn(badgeVariants({ variant }), className)} {...props} />
-  )
+  return <div className={cn(badgeVariants({ variant }), className)} {...props} />;
 }
 
-export { Badge, badgeVariants }
+export { Badge, badgeVariants };

@@ -1,15 +1,16 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/shared/utils/string"
+import { cn } from "@/shared/utils/string";
 
 const buttonVariants = cva(
   "tailwind.config.tsinline-flex tailwind.config.tsitems-center tailwind.config.tsjustify-center tailwind.config.tswhitespace-nowrap tailwind.config.tsrounded-md tailwind.config.tstext-sm tailwind.config.tsfont-medium tailwind.config.tsring-offset-background tailwind.config.tstransition-colors focus-visible:tailwind.config.tsoutline-none focus-visible:tailwind.config.tsring-2 focus-visible:tailwind.config.tsring-ring focus-visible:tailwind.config.tsring-offset-2 disabled:tailwind.config.tspointer-events-none disabled:tailwind.config.tsopacity-50",
   {
     variants: {
       variant: {
-        default: "tailwind.config.tsbg-primary tailwind.config.tstext-primary-foreground hover:tailwind.config.tsbg-primary/90",
+        default:
+          "tailwind.config.tsbg-primary tailwind.config.tstext-primary-foreground hover:tailwind.config.tsbg-primary/90",
         destructive:
           "tailwind.config.tsbg-destructive tailwind.config.tstext-destructive-foreground hover:tailwind.config.tsbg-destructive/90",
         outline:
@@ -30,27 +31,23 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
-)
+  },
+);
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
+    const Comp = asChild ? Slot : "button";
     return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Button.displayName = "Button"
+      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
+    );
+  },
+);
+Button.displayName = "Button";
 
-export { Button, buttonVariants }
+export { Button, buttonVariants };

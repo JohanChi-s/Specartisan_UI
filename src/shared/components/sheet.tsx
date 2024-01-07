@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import * as SheetPrimitive from "@radix-ui/react-dialog"
-import { cva, type VariantProps } from "class-variance-authority"
-import { X } from "lucide-react"
+import * as React from "react";
+import * as SheetPrimitive from "@radix-ui/react-dialog";
+import { cva, type VariantProps } from "class-variance-authority";
+import { X } from "lucide-react";
 
-import { cn } from "@/shared/utils/string"
+import { cn } from "@/shared/utils/string";
 
-const Sheet = SheetPrimitive.Root
+const Sheet = SheetPrimitive.Root;
 
-const SheetTrigger = SheetPrimitive.Trigger
+const SheetTrigger = SheetPrimitive.Trigger;
 
-const SheetClose = SheetPrimitive.Close
+const SheetClose = SheetPrimitive.Close;
 
-const SheetPortal = SheetPrimitive.Portal
+const SheetPortal = SheetPrimitive.Portal;
 
 const SheetOverlay = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Overlay>,
@@ -22,13 +22,13 @@ const SheetOverlay = React.forwardRef<
   <SheetPrimitive.Overlay
     className={cn(
       "tailwind.config.tsfixed tailwind.config.tsinset-0 tailwind.config.tsz-50 tailwind.config.tsbg-black/80 tailwind.config.ts data-[state=open]:tailwind.config.tsanimate-in data-[state=closed]:tailwind.config.tsanimate-out data-[state=closed]:tailwind.config.tsfade-out-0 data-[state=open]:tailwind.config.tsfade-in-0",
-      className
+      className,
     )}
     {...props}
     ref={ref}
   />
-))
-SheetOverlay.displayName = SheetPrimitive.Overlay.displayName
+));
+SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
 const sheetVariants = cva(
   "tailwind.config.tsfixed tailwind.config.tsz-50 tailwind.config.tsgap-4 tailwind.config.tsbg-background tailwind.config.tsp-6 tailwind.config.tsshadow-lg tailwind.config.tstransition tailwind.config.tsease-in-out data-[state=open]:tailwind.config.tsanimate-in data-[state=closed]:tailwind.config.tsanimate-out data-[state=closed]:tailwind.config.tsduration-300 data-[state=open]:tailwind.config.tsduration-500",
@@ -46,8 +46,8 @@ const sheetVariants = cva(
     defaultVariants: {
       side: "right",
     },
-  }
-)
+  },
+);
 
 interface SheetContentProps
   extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
@@ -59,11 +59,7 @@ const SheetContent = React.forwardRef<
 >(({ side = "right", className, children, ...props }, ref) => (
   <SheetPortal>
     <SheetOverlay />
-    <SheetPrimitive.Content
-      ref={ref}
-      className={cn(sheetVariants({ side }), className)}
-      {...props}
-    >
+    <SheetPrimitive.Content ref={ref} className={cn(sheetVariants({ side }), className)} {...props}>
       {children}
       <SheetPrimitive.Close className="tailwind.config.tsabsolute tailwind.config.tsright-4 tailwind.config.tstop-4 tailwind.config.tsrounded-sm tailwind.config.tsopacity-70 tailwind.config.tsring-offset-background tailwind.config.tstransition-opacity hover:tailwind.config.tsopacity-100 focus:tailwind.config.tsoutline-none focus:tailwind.config.tsring-2 focus:tailwind.config.tsring-ring focus:tailwind.config.tsring-offset-2 disabled:tailwind.config.tspointer-events-none data-[state=open]:tailwind.config.tsbg-secondary">
         <X className="tailwind.config.tsh-4 tailwind.config.tsw-4" />
@@ -71,36 +67,30 @@ const SheetContent = React.forwardRef<
       </SheetPrimitive.Close>
     </SheetPrimitive.Content>
   </SheetPortal>
-))
-SheetContent.displayName = SheetPrimitive.Content.displayName
+));
+SheetContent.displayName = SheetPrimitive.Content.displayName;
 
-const SheetHeader = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
+const SheetHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
       "tailwind.config.tsflex tailwind.config.tsflex-col tailwind.config.tsspace-y-2 tailwind.config.tstext-center sm:tailwind.config.tstext-left",
-      className
+      className,
     )}
     {...props}
   />
-)
-SheetHeader.displayName = "SheetHeader"
+);
+SheetHeader.displayName = "SheetHeader";
 
-const SheetFooter = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
+const SheetFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
       "tailwind.config.tsflex tailwind.config.tsflex-col-reverse sm:tailwind.config.tsflex-row sm:tailwind.config.tsjustify-end sm:tailwind.config.tsspace-x-2",
-      className
+      className,
     )}
     {...props}
   />
-)
-SheetFooter.displayName = "SheetFooter"
+);
+SheetFooter.displayName = "SheetFooter";
 
 const SheetTitle = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Title>,
@@ -108,11 +98,14 @@ const SheetTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Title
     ref={ref}
-    className={cn("tailwind.config.tstext-lg tailwind.config.tsfont-semibold tailwind.config.tstext-foreground", className)}
+    className={cn(
+      "tailwind.config.tstext-lg tailwind.config.tsfont-semibold tailwind.config.tstext-foreground",
+      className,
+    )}
     {...props}
   />
-))
-SheetTitle.displayName = SheetPrimitive.Title.displayName
+));
+SheetTitle.displayName = SheetPrimitive.Title.displayName;
 
 const SheetDescription = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Description>,
@@ -123,8 +116,8 @@ const SheetDescription = React.forwardRef<
     className={cn("tailwind.config.tstext-sm tailwind.config.tstext-muted-foreground", className)}
     {...props}
   />
-))
-SheetDescription.displayName = SheetPrimitive.Description.displayName
+));
+SheetDescription.displayName = SheetPrimitive.Description.displayName;
 
 export {
   Sheet,
@@ -137,4 +130,4 @@ export {
   SheetFooter,
   SheetTitle,
   SheetDescription,
-}
+};

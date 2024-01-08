@@ -47,7 +47,7 @@ const pluginOptions = [
     options: {
       auto: true,
     },
-  }
+  },
   // ,
   // {
   //   id: "mismatch-hydration",

@@ -5,7 +5,6 @@ type PreferencesStore = {
   toggleOpenSidebar: (v: boolean) => void;
 };
 
-
 const noop = () => {};
 
 const initPreferencesState: PreferencesStore = {

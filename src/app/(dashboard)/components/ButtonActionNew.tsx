@@ -1,9 +1,7 @@
-'use client'
-
 import { PlusSquareIcon } from "lucide-react";
 
 const ButtonActionNew: React.FC = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   return (
     <Dialog>
       <TooltipProvider delayDuration={200}>

@@ -62,14 +62,15 @@ const DashboardHeader: React.FC = () => {
         </div>
         <div className="grow text-end md:flex md:items-center md:justify-center space-x-2 mr-8">
           <SearchCommandPalette />
-          {/* <ButtonAI /> */}
+          <ButtonAI />
         </div>
         <div className="inline-flex items-center gap-3">
           <Button
             asChild
-            className="text-xs text-black bg-white"
+            className="text-xl text-white"
+            style={{ background: "linear-gradient(-45deg,#ffc800,#ff02f0,#8930fd,#49ccf9)" }}
           >
-            <Link href="/settings/billing" className="inline-flex p-2 rounded-md">
+            <Link href="/settings/billing">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1em"
@@ -85,7 +86,7 @@ const DashboardHeader: React.FC = () => {
               Upgrade
             </Link>
           </Button>
-          {/* <ButtonActionNew /> */}
+          <ButtonActionNew />
           <ButtonQuickActionMenu />
           <ButtonUserMenu />
         </div>

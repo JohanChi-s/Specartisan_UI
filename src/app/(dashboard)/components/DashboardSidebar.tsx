@@ -10,13 +10,12 @@ const DashboardSidebar: React.FC = (props) => {
   return (
     <Collapsible open={preferences.isOpenSidebar} onOpenChange={preferences.toggleOpenSidebar}>
       <CollapsibleContent asChild>
-        <aside className="flex flex-col h-full w-[300px] bg-[#30343b] data-[state=open]:animate-collapsible-w-down data-[state=closed]:animate-collapsible-w-up">
+        <aside className="flex flex-col h-full w-[250px] bg-[#30343b] data-[state=open]:animate-collapsible-w-down data-[state=closed]:animate-collapsible-w-up">
           <AsideWorkspaceSelection />
           <SelectSeparator />
           <ScrollArea className="grow px-4">
             <AsideNavigateMenus />
             <SelectSeparator />
-            <AsideFavorites />
             <AsideSpaces />
           </ScrollArea>
           <AsideSupports />

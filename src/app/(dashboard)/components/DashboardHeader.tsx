@@ -65,26 +65,8 @@ const DashboardHeader: React.FC = () => {
           <ButtonAI />
         </div>
         <div className="inline-flex items-center gap-3">
-          <Button
-            asChild
-            className="text-xl text-white"
-            style={{ background: "linear-gradient(-45deg,#ffc800,#ff02f0,#8930fd,#49ccf9)" }}
-          >
-            <Link href="/settings/billing">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 512 512"
-                className="mr-2"
-              >
-                <path
-                  fill="currentColor"
-                  d="m256 29.816l-231 154v106.368l231-154l231 154V183.816zm0 128.043L105 259.783v90.283l151-101.925l151 101.925v-90.283zm0 112l-87 58.725v67.6l87-58l87 58v-67.6zm0 89.957l-87 58v64.368l87-58l87 58v-64.368z"
-                />
-              </svg>
-              Upgrade
-            </Link>
+          <Button asChild className="text-black text-lg">
+            <Link href="/settings/billing">Upgrade</Link>
           </Button>
           <ButtonActionNew />
           <ButtonQuickActionMenu />

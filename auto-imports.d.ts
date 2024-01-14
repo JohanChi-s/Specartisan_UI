@@ -9,6 +9,7 @@ declare global {
   const AccordionContent: typeof import('./src/shared/components/accordion')['AccordionContent']
   const AccordionItem: typeof import('./src/shared/components/accordion')['AccordionItem']
   const AccordionTrigger: typeof import('./src/shared/components/accordion')['AccordionTrigger']
+  const AspectRatio: typeof import('./src/shared/components/aspect-ratio')['AspectRatio']
   const Button: typeof import('./src/shared/components/button')['Button']
   const Calendar: typeof import('./src/shared/components/calendar')['Calendar']
   const Card: typeof import('./src/shared/components/card')['Card']

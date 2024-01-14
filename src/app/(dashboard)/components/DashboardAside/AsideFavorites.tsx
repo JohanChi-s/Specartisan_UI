@@ -1,6 +1,6 @@
+import { CaretSortIcon } from "@radix-ui/react-icons";
 import { ChevronRightIcon, PinIcon } from "lucide-react";
 import React from "react";
-import { CaretSortIcon } from "@radix-ui/react-icons";
 
 const AsideFavorites: React.FC = () => {
   const handlePinFavorites = () => {};

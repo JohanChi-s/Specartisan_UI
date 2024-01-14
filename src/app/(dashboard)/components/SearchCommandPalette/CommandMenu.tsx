@@ -11,6 +11,7 @@ import {
   User,
   Users,
 } from "lucide-react";
+import CommandSearchItem from "./CommandItem";
 import { QuickFilterCombobox } from "./QuickFilterCombobox";
 
 export function CommandMenu() {
@@ -47,14 +48,9 @@ export function CommandMenu() {
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Suggestions">
-              <CommandItem>
-                <Smile className="mr-2 h-4 w-4" />
-                <span>Search Emoji</span>
-              </CommandItem>
-              <CommandItem>
-                <Calculator className="mr-2 h-4 w-4" />
-                <span>Calculator</span>
-              </CommandItem>
+              <CommandSearchItem />
+              <CommandSearchItem />
+              <CommandSearchItem />
             </CommandGroup>
             <CommandSeparator />
             <CommandGroup heading="Settings">

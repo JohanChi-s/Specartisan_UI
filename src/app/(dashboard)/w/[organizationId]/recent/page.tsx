@@ -1,11 +1,11 @@
 import { currentUser } from "@clerk/nextjs/server";
 
-const DashboardPage: React.FC = async () => {
+const RecentPage: React.FC = async () => {
   const user = await currentUser();
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <h1 className="text-3xl">Dashboard Page</h1>
+      <h1 className="text-3xl">Recent Page</h1>
       <p className="text-base">
         {JSON.stringify({ email: user?.emailAddresses, name: user?.username })}
       </p>
@@ -14,4 +14,4 @@ const DashboardPage: React.FC = async () => {
   );
 };
 
-export default DashboardPage;
+export default RecentPage;

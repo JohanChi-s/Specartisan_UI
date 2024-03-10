@@ -6,7 +6,7 @@ const publicRoutes = ["/", "/login", "/signup", "/create-workspace"];
 export default authMiddleware({
   publicRoutes,
   afterAuth(data, req) {
-    var { userId, orgId, isPublicRoute } = data;
+    let { userId, orgId, isPublicRoute } = data;
     orgId = "org_2adBQQxPZXdwtUMgWkK8NCT75YE";
 
     // Chưa đăng nhập + không phải public rout  e

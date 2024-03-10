@@ -9,7 +9,7 @@ const FontBeVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Tickup - Techmely 🔥",
+  title: "Specatisan 🔥",
   description: "Super clone ClickUp - Techmely",
 };
 

@@ -1,6 +1,8 @@
 import { OrganizationList } from "@clerk/nextjs";
 
 export default function CreateWorkspacePage() {
+  console.log("vao day");
+
   return (
     <OrganizationList
       hidePersonal

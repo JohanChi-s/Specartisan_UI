@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React, { type PropsWithChildren } from "react";
 import DashboardHeader from "./components/DashboardHeader";
 import DashboardMain from "./components/DashboardMain";
 

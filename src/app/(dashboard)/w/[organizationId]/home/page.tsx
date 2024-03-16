@@ -3,11 +3,8 @@ import { auth } from "@clerk/nextjs";
 
 const HomePage: React.FC = () => {
   return (
-    <div>
-      HomePage
-      <div>
-        <DocumentTable />
-      </div>
+    <div className="hidden h-full flex-1 flex-col space-y-8 p-8 md:flex">
+      <DocumentTable />
     </div>
   );
 };

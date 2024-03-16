@@ -8,7 +8,7 @@ const DashboardHeader: React.FC = () => {
   return (
     <header
       id="header"
-      className="flex items-center w-full h-actions-bar px-4 shadow-sm bg-[#3c414a]"
+      className="flex items-center w-full h-actions-bar px-4 shadow-sm dark:bg-muted"
     >
       <div className="flex items-center w-full text-xs">
         <div className="flex items-center w-10 h-10">
